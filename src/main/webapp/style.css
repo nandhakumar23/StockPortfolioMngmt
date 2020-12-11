@@ -1,0 +1,362 @@
+body {
+	margin: 0;
+	background-color: #DCF8EB !important;
+	font-family: "Cairo", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.navbar {
+	display: flex;
+	align-items: center;
+	height: 80px;
+	border-bottom: 2px solid #454545;
+	background-color: #787878;
+	color: white;
+}
+.navbar .wrap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.navbar h1 {
+	font-family: "Teko", Arial, sans-serif !important;
+	font-size: 34px;
+	margin-bottom: 0;
+}
+.button {
+	display: inline-block;
+	text-transform: uppercase;
+	border: 2px solid #51C58E;
+	background: none;
+	color: #51C58E;
+	border-radius: 4px;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 15px;
+	transition: 0.1s;
+}
+.button:hover {
+	background: #51C58E;
+	color: white;
+}
+.button:focus {
+	outline: 0;
+}
+input:focus {
+	outline: 0;
+}
+.navbar .button {
+	color: white;
+	border: 2px solid #454545;
+	background: #454545;
+	margin-left: auto;
+}
+.navbar .button:hover {
+	color: white;
+	border-color: white;
+	background: none;
+	margin-left: auto;
+	text-decoration: none !important;
+}
+.wrap {
+	max-width: 75%;
+	margin: 0 auto;
+}
+.grid-container {
+	margin: 30px 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+}
+.homepage-container {
+	background-color: white;
+	border: 2px solid #E6E6E6;
+	border-radius: 4px;
+}
+#graph-container {
+	padding: 40px;
+	grid-column: 1 / 3;
+}
+#graph-container #portfolio-value {
+	font-size: 40px;
+	font-weight: 200;
+}
+#graph-container #portfolio-value-change {
+	margin-top: 8px;
+}
+.canvas-container {
+	position: relative;
+	height: 400px;
+	width: 100%;
+}
+.container-header {
+	height: 68px;
+	border-bottom: 2px solid #E6E6E6;
+	display: flex;
+	align-items: center;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 0 26px;
+}
+.add-stocks-container {
+	margin-left: auto;
+}
+.add-stocks-container > .button {
+	margin-left: 4px;
+	padding: 8px 12px;
+	font-size: 12px;
+}
+button {
+	cursor: pointer;
+}
+
+
+
+
+
+.modal {
+	display: none;
+	align-items: center;
+  	justify-content: center;
+	position: fixed;
+	z-index: 2;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0,0.4);
+}
+.modal-box {
+	width: 360px;
+	margin: auto;
+	background-color: white;
+    border-radius: 4px;
+}
+.modal-box form {
+	margin: 12px 0 0 0;
+}
+.modal-box form button {
+	margin: 12px 0 0 0;
+}
+.modal-box form .form-row {
+	height: 60px;
+	font-size: 14px;
+	font-weight: normal;
+	color: gray;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.modal-box form .csvError {
+	margin-top: 10px;
+	min-height: 50px;
+	font-size: 14px;
+	font-weight: normal;
+	color: gray;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	line-height: 13px;
+}
+
+.modal-box form input {
+	text-align: right;
+	height: 40px;
+	border-radius: 4px;
+	border: 1px solid #F5F5F5;
+	background-color: #F5F5F5;
+	font-size: 16px;
+	padding: 0 12px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.modal-box form input:hover {
+	background-color: white;
+}
+.modal-box form input:focus {
+	border-color: #51C58E;
+}
+.modal-box form input.ticker {
+	text-transform: uppercase;
+}
+.modal-box form input[type="file"] {
+	max-width: 240px;
+	background: none;
+	border: none;
+	height: 24px;
+}
+.error-msg {
+	color: #FF5252;
+	font-weight: 400;
+	font-size: 0.8em;
+}
+.popup-header {
+	padding: 18px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.popup-section {
+	padding: 0 22px 22px 22px;
+}
+
+.modal-box .button {
+	width: 100%;
+}
+#add-stock-cancel,
+#view-stock-cancel,
+#import-stock-cancel {
+	border: 2px solid gray;
+	background: none;
+	color: gray;
+}
+#add-stock-cancel:hover,
+#view-stock-cancel:hover,
+#import-stock-cancel:hover {
+	opacity: 0.6;
+}
+
+#zoomin,
+#zoomout {
+	line-height: 0;
+    background: #6c757d;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 1.6em;
+}
+
+
+
+
+table#stock-list {
+	width: 100%;
+	border-collapse: collapse;
+}
+table#stock-list td {
+	width: 25%;
+	padding: 18px 26px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+table#stock-list tr {
+	border-top: 1px solid #E6E6E6;
+	font-weight: 300;
+	text-align: center;
+}
+table#stock-list tr:first-child {
+	border: none;
+}
+table#stock-list td:first-child {
+	text-align: left;
+	max-width: 150px;
+}
+table#stock-list td a{
+    color: #51C58E;
+}
+table#stock-list td a:hover {
+	opacity:0.6;
+}
+
+.toggle-buttons {
+	background: #51C58E;
+	height: 68px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0 26px;
+}
+.toggle-button {
+	background: #DCF8EB;
+	text-align: center;
+	width: 50%;
+}
+.toggle-button:hover {
+	background: white;
+	color: #51C58E;
+	text-decoration: none;
+}
+#select-all {
+	margin-right: 13px;
+}
+#deselect-all {
+	margin-left: 13px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  	position: relative;
+  	display: inline-block;
+  	width: 50px;
+  	height: 24px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+	outline: 0;
+  	opacity: 0;
+  	width: 0;
+  	height: 0;
+}
+/* The slider */
+.slider {
+  	position: absolute;
+  	cursor: pointer;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+  	background-color: #E6E6E6;
+  	-webkit-transition: .2s;
+  	transition: .2s;
+  	border-radius: 34px;
+}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .2s;
+	transition: .2s;
+	border-radius: 50%;
+}
+input:checked + .slider {
+  	background-color: #51C58E;
+}
+input:focus + .slider {
+  	box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+.btn-primary {
+	background: red !important;
+	border: none !important;
+}
+.btn-secondary {
+	background: #787878 !important;
+	border: none !important;
+}
+label.switch {
+	margin-bottom: 0;
+}
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 1070px) {
+	.homepage-container, .grid-helper {
+		grid-column: 1 / 3;
+	}
+	.wrap {
+		max-width: 100%;
+		margin: 0 30px;
+	}
+	.navbar h1 {
+		font-size: 23px;
+	}
+}
